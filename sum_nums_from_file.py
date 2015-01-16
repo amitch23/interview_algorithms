@@ -26,22 +26,25 @@ def sum_ints(nums_txt):
 nums_txt = 'http://s3.amazonaws.com/realscout-pairing-exercises/ints.txt'
 res1 = sum_ints(nums_txt)
 
-global trues
+
 trues = 0
-global falses
+
 falses = 0
 
 def test(res1, expected):
-    
+    global trues
+    global falses
+  
     if res1 == expected:
         trues += 1
     
     else:
         falses += 1
 
-    print "%r pass, %r fail" %(trues, falses)
+    return "%r pass, %r fail" % (trues, falses)
     
 print test(res1, 69)
 print test(res1, 68)
+print test(res1, 100)
 
    
