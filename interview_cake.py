@@ -22,21 +22,20 @@ When building your function:
 
 """
 
-# Tackling the pressing problems of our day and age.
+# Interview cake, yet again tackling the pressing problems of our day and age.
 
 flight_length = 180
 movie_lengths = [60, 90, 120, 63, 100, 90]
 
-
+#poor runtime: nested for loop, check each sum
 def can_watch_two_movies(flight_length, movie_lengths):
 
-    #poor runtime: nested for loop, check each sum
     movie_sums=[]
 
     for movie in movie_lengths:
         for m in range(len(movie_lengths)/2):
 
-            if (movie_lengths[m] + movie == flight_length) and (movie_lengths[m] != movie):
+            if (movie_lengths[m] + movie == flight_length) and (movie_lengths[m] != movie): #assuming same length indicates same movie, faulty logic really....
                 movie_sums.append((movie_lengths[m], movie))
             else:
                 continue
@@ -48,12 +47,12 @@ def can_watch_two_movies(flight_length, movie_lengths):
 
 def can_watch_two_movies_faster(flight_length, movie_lengths):
 
-    #put movie_lengths in a dictionary:
+    #put movie_lengths in a dictionary that looks like one of the following? But still would have to compare each item. Maybe a dictionary isn't useful here....
     {'1': 90, '2':97, '3': 120}
-
     {'90': 90, '97': 97, '120': 120}
 
-    #some type of sort method?
+    #or some sort algorithm? bubble? quick? merge?
+    #binary tree? oh boy.
 
 
 
